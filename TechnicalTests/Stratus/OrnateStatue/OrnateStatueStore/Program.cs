@@ -8,8 +8,8 @@ public class Program
 
         var items = new List<Item>
         {
-            new (){Name = "Ornamental vase", SellIn = 10, Quality = 20},
-            new (){Name = "Aged Brie", SellIn = 2, Quality = 0},
+            new () {Name = "Ornamental vase", SellIn = 10, Quality = 20},
+            new () {Name = "Aged Brie", SellIn = 2, Quality = 0},
             new () {Name = "Set of teacups", SellIn = 5, Quality = 7},
             new () {Name = "Diamond ring", SellIn = 0, Quality = 80},
             new () {Name = "Diamond ring", SellIn = -1, Quality = 80},
@@ -36,7 +36,7 @@ public class Program
         };
 
         var store = new Store(items);
-        var days = args.Length > 0 ? int.Parse(args[0]) + 1 : 2;
+        var days = 10;// args.Length > 0 ? int.Parse(args[0]) + 1 : 2;
 
         for (var i = 0; i < days; i++)
         {

@@ -11,14 +11,25 @@ public class Store
     {
         for (var i = 0; i < _items.Count; i++)
         {
+            if (_items[i].Name == "Diamond ring")
+                continue;
+
             if (_items[i].Name != "Aged Brie" && _items[i].Name != "Backstage passes to concert")
             {
                 if (_items[i].Quality > 0)
                 {
-                    if (_items[i].Name != "Diamond ring")
-                    {
-                        _items[i].Quality = _items[i].Quality - 1;
-                    }
+                    //if (_items[i].Name != "Diamond ring")
+                    //{
+                    _items[i].Quality = _items[i].Quality - 1;
+                    //}
+                }
+
+                if (_items[i].Name == "Fresh apples" && _items[i].Quality > 0)
+                {
+                    //if (_items[i].Name != "Diamond ring")
+                    //{
+                    _items[i].Quality = _items[i].Quality - 1;
+                    //}
                 }
             }
             else
@@ -48,10 +59,10 @@ public class Store
                 }
             }
 
-            if (_items[i].Name != "Diamond ring")
-            {
+            //if (_items[i].Name != "Diamond ring")
+            //{
                 _items[i].SellIn = _items[i].SellIn - 1;
-            }
+            //}
 
             if (_items[i].SellIn < 0)
             {
@@ -61,10 +72,17 @@ public class Store
                     {
                         if (_items[i].Quality > 0)
                         {
-                            if (_items[i].Name != "Diamond ring")
-                            {
-                                _items[i].Quality = _items[i].Quality - 1;
-                            }
+                            //if (_items[i].Name != "Diamond ring")
+                            //{
+                            _items[i].Quality = _items[i].Quality - 1;
+                            //}
+                        }
+                        if (_items[i].Name == "Fresh apples" && _items[i].Quality > 0)
+                        {
+                            //if (_items[i].Name != "Diamond ring")
+                            //{
+                            _items[i].Quality = _items[i].Quality - 1;
+                            //}
                         }
                     }
                     else
@@ -82,4 +100,36 @@ public class Store
             }
         }
     }
+
+    //public void UpdateQuality2()
+    //{
+    //    for (var i = 0; i < _items.Count; i++)
+    //    {
+    //        if (_items[i].Name == "Diamond ring")
+    //            continue;
+
+    //        _items[i].SellIn = _items[i].SellIn - 1;
+
+
+    //        if (_items[i].Quality > 0)
+    //        {
+    //            _items[i].Quality = _items[i].Quality - 1;
+    //        }
+
+    //        if (_items[i].SellIn < 0)
+    //        {
+    //            if (_items[i].Quality > 0)
+    //            {
+    //                _items[i].Quality = _items[i].Quality - 1;
+    //            }
+    //        }
+    //    }
+    //}
+
+    //private int GetQuantity(int quantity)
+    //{
+    //    if (quantity > 0)
+    //        quantity--;
+    //    return quantity;
+    //}
 }
